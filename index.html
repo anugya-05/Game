@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11152c">
+    <title>MemoryVerse | Brain Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="midnight">
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <div class="app">
+
+        <!-- NAVIGATION -->
+
+        <nav class="navbar">
+            <a class="brand" href="#" id="brandHome">
+                <span class="brand-icon">✦</span>
+                MEMORY<span class="brand-highlight">VERSE</span>
+            </a>
+
+            <div class="nav-links">
+                <button class="nav-btn active" id="homeNav">Home</button>
+                <button class="nav-btn" id="statsNav">Statistics</button>
+                <button class="nav-btn" id="settingsNav">Settings</button>
+            </div>
+
+            <div class="nav-right">
+                <span class="online-dot"></span>
+                <span class="player-label">PLAYER 01</span>
+            </div>
+        </nav>
+
+
+        <!-- HOME SCREEN -->
+
+        <main id="homeScreen" class="screen">
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span>✦</span> THE ULTIMATE BRAIN ARCADE
+                    </div>
+
+                    <h1>
+                        TRAIN YOUR<br>
+                        <span class="gradient-text">MEMORY.</span>
+                        <br>
+                        BEAT THE CLOCK.
+                    </h1>
+
+                    <p class="hero-description">
+                        Challenge your brain, discover matching pairs,
+                        build combos and become a MemoryVerse champion.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="primary-btn" id="playBtn">
+                            PLAY NOW <span>↗</span>
+                        </button>
+
+                        <button class="secondary-btn" id="howToBtn">
+                            How to play ?
+                        </button>
+                    </div>
+
+                    <div class="hero-highlights">
+                        <div>
+                            <strong id="homeGames">0</strong>
+                            <span>GAMES PLAYED</span>
+                        </div>
+
+                        <div>
+                            <strong id="homeWins">0</strong>
+                            <span>VICTORIES</span>
+                        </div>
+
+                        <div>
+                            <strong id="homeBest">0</strong>
+                            <span>BEST SCORE</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hero-art">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                    <div class="floating-card card-a">🚀</div>
+                    <div class="floating-card card-b">🍕</div>
+                    <div class="floating-card card-c">🌈</div>
+                    <div class="floating-card card-d">🎧</div>
+
+                    <div class="brain-circle">
+                        <span>🧠</span>
+                    </div>
+
+                    <div class="floating-label">THINK FAST ✦</div>
+                </div>
+
+            </section>
+
+
+            <!-- DIFFICULTY SELECTION -->
+
+            <section class="setup-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-tag">YOUR CHALLENGE</span>
+                        <h2>Choose your level</h2>
+                    </div>
+
+                    <span class="section-note">Select your difficulty</span>
+                </div>
+
+                <div class="difficulty-grid">
+
+                    <button class="difficulty-card selected" data-level="easy">
+                        <span class="difficulty-icon">🌱</span>
+                        <span class="difficulty-name">Easy</span>
+                        <span class="difficulty-detail">6 pairs · 60 seconds</span>
+                        <span class="difficulty-check">✓</span>
+                    </button>
+
+                    <button class="difficulty-card" data-level="medium">
+                        <span class="difficulty-icon">⚡</span>
+                        <span class="difficulty-name">Medium</span>
+                        <span class="difficulty-detail">8 pairs · 90 seconds</span>
+                        <span class="difficulty-check">✓</span>
+                    </button>
+
+                    <button class="difficulty-card" data-level="hard">
+                        <span class="difficulty-icon">🔥</span>
+                        <span class="difficulty-name">Hard</span>
+                        <span class="difficulty-detail">12 pairs · 120 seconds</span>
+                        <span class="difficulty-check">✓</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- INSTRUCTIONS -->
+
+            <section class="instructions-section" id="instructions">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-tag">GET STARTED</span>
+                        <h2>How to play</h2>
+                    </div>
+                </div>
+
+                <div class="instruction-grid">
+
+                    <div class="instruction-card">
+                        <span>01</span>
+                        <div class="instruction-icon">🃏</div>
+                        <h3>Flip the cards</h3>
+                        <p>Click two cards to reveal their symbols.</p>
+                    </div>
+
+                    <div class="instruction-card">
+                        <span>02</span>
+                        <div class="instruction-icon">🎯</div>
+                        <h3>Find a match</h3>
+                        <p>Remember their positions and match identical pairs.</p>
+                    </div>
+
+                    <div class="instruction-card">
+                        <span>03</span>
+                        <div class="instruction-icon">🔥</div>
+                        <h3>Build combos</h3>
+                        <p>Make consecutive matches to earn bonus points.</p>
+                    </div>
+
+                    <div class="instruction-card">
+                        <span>04</span>
+                        <div class="instruction-icon">🏆</div>
+                        <h3>Beat the clock</h3>
+                        <p>Complete the board before your timer reaches zero.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- GAME SCREEN -->
+
+        <main id="gameScreen" class="screen hidden">
+
+            <div class="game-heading">
+                <div>
+                    <span class="section-tag">BRAIN ARCADE</span>
+                    <h1>Memory <span class="gradient-text">Challenge</span></h1>
+                    <p>Find every pair. Make every second count.</p>
+                </div>
+
+                <button class="secondary-btn home-btn" id="gameHomeBtn">
+                    ← Home
+                </button>
+            </div>
+
+
+            <!-- GAME STATISTICS -->
+
+            <section class="game-stats">
+
+                <div class="game-stat">
+                    <span class="stat-icon">⏱️</span>
+                    <div>
+                        <small>TIME LEFT</small>
+                        <strong id="timer">01:00</strong>
+                    </div>
+                </div>
+
+                <div class="game-stat">
+                    <span class="stat-icon">⭐</span>
+                    <div>
+                        <small>SCORE</small>
+                        <strong id="score">0</strong>
+                    </div>
+                </div>
+
+                <div class="game-stat">
+                    <span class="stat-icon">🎯</span>
+                    <div>
+                        <small>MOVES</small>
+                        <strong id="moves">0</strong>
+                    </div>
+                </div>
+
+                <div class="game-stat">
+                    <span class="stat-icon">💯</span>
+                    <div>
+                        <small>ACCURACY</small>
+                        <strong id="accuracy">0%</strong>
+                    </div>
+                </div>
+
+                <div class="game-stat">
+                    <span class="stat-icon">🏆</span>
+                    <div>
+                        <small>BEST SCORE</small>
+                        <strong id="bestScore">0</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- PROGRESS -->
+
+            <section class="game-progress">
+
+                <div class="progress-heading">
+                    <span>Matching progress</span>
+                    <strong id="progressText">0 / 6 pairs</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressFill"></div>
+                </div>
+
+                <div class="combo-area">
+                    <span id="comboText">✨ Find your first match!</span>
+                    <span id="streakText">COMBO ×0</span>
+                </div>
+
+            </section>
+
+
+            <!-- GAME CONTROLS -->
+
+            <div class="game-controls">
+
+                <button class="control-btn" id="hintBtn">
+                    💡 Hint <span id="hintCount">3 left</span>
+                </button>
+
+                <button class="control-btn" id="pauseBtn">
+                    ⏸ Pause
+                </button>
+
+                <button class="control-btn" id="restartBtn">
+                    ↻ Restart
+                </button>
+
+                <button class="control-btn" id="soundBtn">
+                    🔊 Sound On
+                </button>
+
+            </div>
+
+
+            <!-- CARD BOARD -->
+
+            <section id="gameBoard" class="game-board"></section>
+
+            <p class="game-message" id="gameMessage">
+                Focus, remember and match!
+            </p>
+
+        </main>
+
+
+        <!-- STATISTICS SCREEN -->
+
+        <main id="statsScreen" class="screen hidden">
+
+            <div class="page-heading">
+                <span class="section-tag">YOUR PROGRESS</span>
+                <h1>Player <span class="gradient-text">Statistics</span></h1>
+                <p>Every match tells a story. Track your progress here.</p>
+            </div>
+
+            <section class="statistics-grid">
+
+                <div class="big-stat">
+                    <span>🎮</span>
+                    <small>TOTAL GAMES</small>
+                    <strong id="statGames">0</strong>
+                </div>
+
+                <div class="big-stat">
+                    <span>🏆</span>
+                    <small>GAMES WON</small>
+                    <strong id="statWins">0</strong>
+                </div>
+
+                <div class="big-stat">
+                    <span>📈</span>
+                    <small>WIN RATE</small>
+                    <strong id="statWinRate">0%</strong>
+                </div>
+
+                <div class="big-stat">
+                    <span>⭐</span>
+                    <small>TOTAL SCORE</small>
+                    <strong id="statTotalScore">0</strong>
+                </div>
+
+            </section>
+
+            <section class="stats-detail">
+
+                <div class="detail-panel">
+                    <h2>Best scores</h2>
+
+                    <div class="score-row">
+                        <span>🌱 Easy</span>
+                        <strong id="easyBest">0</strong>
+                    </div>
+
+                    <div class="score-row">
+                        <span>⚡ Medium</span>
+                        <strong id="mediumBest">0</strong>
+                    </div>
+
+                    <div class="score-row">
+                        <span>🔥 Hard</span>
+                        <strong id="hardBest">0</strong>
+                    </div>
+
+                </div>
+
+                <div class="detail-panel">
+                    <h2>Achievements unlocked</h2>
+                    <div id="statsAchievements" class="achievement-mini-list">
+                        No achievements yet. Start playing!
+                    </div>
+                </div>
+
+            </section>
+
+            <button class="secondary-btn back-home" id="statsHomeBtn">
+                ← Back to Home
+            </button>
+
+        </main>
+
+
+        <!-- SETTINGS SCREEN -->
+
+        <main id="settingsScreen" class="screen hidden">
+
+            <div class="page-heading">
+                <span class="section-tag">CUSTOMISE YOUR EXPERIENCE</span>
+                <h1>Game <span class="gradient-text">Settings</span></h1>
+                <p>Make MemoryVerse feel like your own arcade.</p>
+            </div>
+
+            <section class="settings-panel">
+
+                <div class="setting-row">
+                    <div>
+                        <h3>🔊 Sound effects</h3>
+                        <p>Play sounds for matches, misses and achievements.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>🎨 Colour theme</h3>
+                        <p>Choose the atmosphere of your game.</p>
+                    </div>
+
+                    <select id="themeSelect" class="theme-select">
+                        <option value="midnight">Midnight Purple</option>
+                        <option value="ocean">Ocean Blue</option>
+                        <option value="violet">Electric Violet</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="emerald">Emerald</option>
+                        <option value="light">Light Mode</option>
+                    </select>
+                </div>
+
+                <div class="theme-grid">
+
+                    <button class="theme-choice" data-theme-choice="midnight">
+                        <span class="theme-dot midnight-dot"></span>
+                        Midnight
+                    </button>
+
+                    <button class="theme-choice" data-theme-choice="ocean">
+                        <span class="theme-dot ocean-dot"></span>
+                        Ocean
+                    </button>
+
+                    <button class="theme-choice" data-theme-choice="violet">
+                        <span class="theme-dot violet-dot"></span>
+                        Violet
+                    </button>
+
+                    <button class="theme-choice" data-theme-choice="sunset">
+                        <span class="theme-dot sunset-dot"></span>
+                        Sunset
+                    </button>
+
+                    <button class="theme-choice" data-theme-choice="emerald">
+                        <span class="theme-dot emerald-dot"></span>
+                        Emerald
+                    </button>
+
+                    <button class="theme-choice" data-theme-choice="light">
+                        <span class="theme-dot light-dot"></span>
+                        Light
+                    </button>
+
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>🎮 Default difficulty</h3>
+                        <p>Choose the level selected when you open the game.</p>
+                    </div>
+
+                    <select id="defaultDifficulty" class="theme-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <button class="secondary-btn" id="settingsHomeBtn">
+                    ← Back to Home
+                </button>
+
+            </section>
+
+        </main>
+
+
+        <!-- PAUSE OVERLAY -->
+
+        <div class="overlay hidden" id="pauseOverlay">
+
+            <div class="popup-card">
+                <div class="popup-icon">⏸️</div>
+                <span class="section-tag">TAKE A BREATHER</span>
+                <h2>Game Paused</h2>
+                <p>Your progress is safe. Ready to continue?</p>
+
+                <button class="primary-btn full-btn" id="resumeBtn">
+                    ▶ Resume Game
+                </button>
+
+                <button class="secondary-btn full-btn" id="pauseRestartBtn">
+                    ↻ Restart
+                </button>
+
+                <button class="text-btn" id="pauseHomeBtn">
+                    Return to Home
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS OVERLAY -->
+
+        <div class="overlay hidden" id="resultOverlay">
+
+            <div class="popup-card result-card">
+
+                <div class="popup-icon" id="resultEmoji">🏆</div>
+
+                <span class="section-tag">CHALLENGE COMPLETE</span>
+
+                <h2 id="resultTitle">Amazing Work!</h2>
+
+                <p id="resultMessage">You completed the challenge.</p>
+
+                <div class="result-score">
+                    <small>FINAL SCORE</small>
+                    <strong id="finalScore">0</strong>
+                </div>
+
+                <div class="result-details">
+                    <div>
+                        <small>ACCURACY</small>
+                        <strong id="finalAccuracy">0%</strong>
+                    </div>
+
+                    <div>
+                        <small>TIME LEFT</small>
+                        <strong id="finalTime">00:00</strong>
+                    </div>
+
+                    <div>
+                        <small>MOVES</small>
+                        <strong id="finalMoves">0</strong>
+                    </div>
+                </div>
+
+                <div id="resultAchievements" class="result-achievements"></div>
+
+                <button class="primary-btn full-btn" id="playAgainBtn">
+                    Play Again ↗
+                </button>
+
+                <button class="secondary-btn full-btn" id="resultHomeBtn">
+                    Back to Home
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOW TO PLAY OVERLAY -->
+
+        <div class="overlay hidden" id="helpOverlay">
+
+            <div class="popup-card help-card">
+
+                <button class="close-btn" id="closeHelpBtn">✕</button>
+
+                <div class="popup-icon">💡</div>
+
+                <h2>How to play</h2>
+
+                <p>1. Select a difficulty level.</p>
+                <p>2. Flip two cards at a time.</p>
+                <p>3. Match identical symbols.</p>
+                <p>4. Build combos for bonus points.</p>
+                <p>5. Use hints if you get stuck.</p>
+                <p>6. Finish before the timer reaches zero.</p>
+
+                <button class="primary-btn full-btn" id="helpPlayBtn">
+                    Got it! Let's Play
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONFETTI CONTAINER -->
+
+        <div id="confettiContainer"></div>
+
+        <footer class="footer">
+            <span>✦ MEMORYVERSE</span>
+            <span>Think. Match. Conquer.</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
